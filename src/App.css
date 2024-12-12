@@ -1,0 +1,101 @@
+/* Global styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f8fa;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.column {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  overflow: hidden;
+  margin-bottom: 20px; /* Added margin between columns */
+}
+
+.column h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #4b6c7f;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.task-card {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-card h6 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.task-card p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.task-card.dragging {
+  opacity: 0.5;
+}
+
+/* Large Screens (Desktop) - 4 columns in a row */
+@media (max-width: 1200px) {
+  .kanban-board-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 1rem;
+  }
+}
+
+/* Medium Screens (Tablets) - 2 rows, 2 columns */
+@media (max-width: 1200px){
+  .kanban-board-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1rem;
+  }
+}
+
+/* Smaller Tablets and Phones - 2 rows, 2 columns */
+@media (max-width: 768px)  {
+  .kanban-board-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1rem;
+  }
+}
+
+/* Pixel 7 and smaller screens (<= 480px) - Single column */
+@media (max-width: 480px) {
+  .kanban-board-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column */
+    gap: 1rem;
+  }
+}
